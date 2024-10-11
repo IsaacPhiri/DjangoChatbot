@@ -11,7 +11,7 @@ import pickle
 stemmer = LancasterStemmer()
 
 # Ensure necessary NLTK data is downloaded
-nltk.download('punkt')
+nltk.download('punkt_tab')
 
 # Load the intents file
 with open("intents.json") as file:
