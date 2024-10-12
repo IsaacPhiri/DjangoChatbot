@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+PORT = os.environ.get('PORT', 8000)  # Default to 8000 if not set
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +29,8 @@ SECRET_KEY = 'django-insecure-j^f$7#$isl&=+ys*qxwx--+--r_8y7f#kll0as8znd79ud6=92
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['djangochatbot.onrender.com']
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'djangochatbot.onrender.com']
 
 
 # Application definition
