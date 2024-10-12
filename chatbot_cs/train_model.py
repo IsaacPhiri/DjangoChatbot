@@ -77,4 +77,4 @@ model.compile(optimizer='adam',
 model.fit(training, output, epochs=1000, batch_size=8)
 
 # Save the model
-model.save("chatbot_model.h5")
+model.save("chatbot_model.keras")
