@@ -14,26 +14,51 @@ stemmer = LancasterStemmer()
 with open("intents.json") as file:
     data = json.load(file)
 
-model = keras.models.load_model("chatbot_model.h5")
+model = keras.models.load_model("chatbot_model.keras")
 
 with open("data.pickle", "rb") as f:
     words, labels, training, output = pickle.load(f)
 
-def bag_of_words(s, words):
-    bag = [0 for _ in range(len(words))]
-    s_words = nltk.word_tokenize(s)
-    s_words = [stemmer.stem(word.lower()) for word in s_words]
+# def bag_of_words(s, words):
+#     bag = [0 for _ in range(len(words))]
+#     s_words = nltk.word_tokenize(s)
+#     s_words = [stemmer.stem(word.lower()) for word in s_words]
 
+#     for se in s_words:
+#         for i, w in enumerate(words):
+#             if w == se:
+#                 bag[i] = 1
+#     return np.array(bag)
+
+def bag_of_words(s, words):
+    bag = [0 for _ in range(len(words))]  # Initialize a bag of zeroes
+
+    s_words = nltk.word_tokenize(s)  # Tokenize input sentence
+    s_words = [stemmer.stem(word.lower()) for word in s_words]  # Stem the words
+
+    # Populate the bag with 1s where the stemmed word matches 'words'
     for se in s_words:
-        for i, w in enumerate(words):
-            if w == se:
-                bag[i] = 1
+        if se in words:
+            index = words.index(se)
+            bag[index] = 1
+
+    # Debugging: check the length and contents of the bag
+    print("Input sentence:", s)
+    print("Bag of words vector:", bag)
+    print("Length of bag of words vector:", len(bag))
+
     return np.array(bag)
 
 def chatbot_response(request):
     if request.method == "POST":
         user_message = request.POST.get('message')
-        results = model.predict(np.array([bag_of_words(user_message, words)]))
+        
+        # Debugging: check bag of words output before passing to model
+        bow_vector = bag_of_words(user_message, words)
+        print("Bag of words vector shape:", bow_vector.shape)  # Should be (58,)
+
+        # Reshape the input to match the model's expected input shape
+        results = model.predict(np.array([bow_vector]))  # Reshape to (1, 58)
         results_index = np.argmax(results)
         tag = labels[results_index]
 

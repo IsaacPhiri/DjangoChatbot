@@ -1,33 +1,95 @@
-{"intents": [
-    {"tag": "faq",
-     "patterns": ["FAQ", "FAQs", "Frequently Asked Questions", "Frequently Asked Question", "Frequently Asked", "Frequently", "Questions", "Question", "Help", "Help me", "Help me out", "Help me please", "Help me with this", "Help me with that", "Help me with something", "Help me with a question", "Help me with a problem", "Help me with an issue", "Help me with a concern", "Help me with a query", "Help me with a request"],
-     "responses": ["What can I do for you?", "How can I help you?", "What do you need help with?", "How can I assist you?", "What do you need assistance with?", "How can I be of service?", "What do you need assistance with?", "What do you need help with?", "How can I be of service?", "What do you need help with?", "How can I assist you?", "What can I do for you?", "How can I help you?", "What do you need help with?", "How can I assist you?", "What do you need assistance with?", "How can I be of service?", "What do you need assistance with?", "What do you need help with?", "How can I be of service?", "What do you need help with?", "How can I assist you?", "What can I do for you?", "How can I help you?", "What do you need help with?", "How can I assist you?", "What do you need assistance with?", "How can I be of service?", "What do you need assistance with?", "What do you need help with?", "How can I be of service?", "What do you need help with?", "How can I assist you?", "What can I do for you?", "How can I help you?", "What do you need help with?", "How can I assist you?", "What do you need assistance with?", "How can I be of service?", "What do you need assistance with?", "What do you need help with?", "How can I be of service?", "What do you need help with?", "How can I assist you?"],
-     "context_set": ""
-    },
-    {"tag": "goodbye",
-     "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day"],
-     "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!"],
-     "context_set": ""
-    },
-    {"tag": "age",
-     "patterns": ["how old", "how old is tim", "what is your age", "how old are you", "age?"],
-     "responses": ["I am 18 years old!", "18 years young!"],
-     "context_set": ""
-    },
-    {"tag": "name",
-     "patterns": ["what is your name", "what should I call you", "whats your name?"],
-     "responses": ["You can call me Tim.", "I'm Tim!", "I'm Tim aka Tech With Tim."],
-     "context_set": ""
-    },
-    {"tag": "shop",
-     "patterns": ["Id like to buy something", "whats on the menu", "what do you reccommend?", "could i get something to eat"],
-     "responses": ["We sell chocolate chip cookies for $2!", "Cookies are on the menu!"],
-     "context_set": ""
-    },
-    {"tag": "hours",
-     "patterns": ["when are you guys open", "what are your hours", "hours of operation"],
-     "responses": ["We are open 7am-4pm Monday-Friday!"],
-     "context_set": ""
-    }
-]
+{
+    "intents": [
+        {
+            "tag": "faq",
+            "patterns": [
+                "FAQ", "FAQs", "Frequently Asked Questions", "Frequently Asked Question", 
+                "Frequently Asked", "Frequently", "Questions", "Question", 
+                "Help", "Help me", "Help me out", "Help me please", 
+                "Help me with this", "Help me with that", "Help me with something", 
+                "Help me with a question", "Help me with a problem", "Help me with an issue", 
+                "Help me with a concern", "Help me with a query", "Help me with a request"
+            ],
+            "responses": [
+                "Welcome! How can we assist you today?",
+                "How can we help you today?",
+                "What can we do for you?",
+                "How can we assist you?",
+                "How may I help you?"
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "products",
+            "patterns": [
+                "What products do you offer?", "Can you list your products?", 
+                "What ICT products do you sell?", "Show me your products"
+            ],
+            "responses": [
+                "We offer a wide range of ICT products including laptops, desktops, tablets, and accessories.",
+                "Our products include laptops, desktops, tablets, and a variety of accessories."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "order_status",
+            "patterns": [
+                "How can I track my order?", "Where is my order?", 
+                "Can I check my order status?", "Track order"
+            ],
+            "responses": [
+                "You can track your order by logging into your account and checking the order status.",
+                "To track your order, please log in to your account and view the order status."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "delivery",
+            "patterns": [
+                "How long does delivery take?", "What are your delivery options?", 
+                "Do you offer express delivery?", "Delivery times"
+            ],
+            "responses": [
+                "Delivery times vary depending on your location and chosen delivery method.",
+                "We offer standard and express delivery options. Delivery times may vary."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "payment",
+            "patterns": [
+                "What payment methods do you accept?", "Can I pay with credit card?", 
+                "Do you accept PayPal?", "Payment options"
+            ],
+            "responses": [
+                "We accept credit card, PayPal, and bank transfer for payments.",
+                "You can pay using credit card, PayPal, or bank transfer."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "returns",
+            "patterns": [
+                "How do I return a product?", "What is your return policy?", 
+                "Can I exchange a product?", "Return procedure"
+            ],
+            "responses": [
+                "You can return a product within 30 days for a full refund. Please see our return policy for details.",
+                "Our return policy allows returns within 30 days of purchase for a refund or exchange."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "support",
+            "patterns": [
+                "How can I contact support?", "Do you offer customer support?", 
+                "Can I get help with technical issues?", "Support options"
+            ],
+            "responses": [
+                "Our customer support team is available 24/7 via phone, email, or live chat.",
+                "For assistance with technical issues or other inquiries, please contact our support team."
+            ],
+            "context_set": ""
+        }
+    ]
 }
