@@ -30,8 +30,14 @@ SECRET_KEY = 'django-insecure-j^f$7#$isl&=+ys*qxwx--+--r_8y7f#kll0as8znd79ud6=92
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'djangochatbot.onrender.com']
+ALLOWED_HOSTS = ['localhost',
+                 '127.0.0.1', 
+                 'djangochatbot.onrender.com'
+                 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://djangochatbot.onrender.com'
+]
 
 # Application definition
 
