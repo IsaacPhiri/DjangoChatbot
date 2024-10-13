@@ -10,6 +10,8 @@ import pickle
 
 stemmer = LancasterStemmer()
 
+nltk.download('punkt') 
+
 # Load the intents and model
 with open("intents.json") as file:
     data = json.load(file)
