@@ -137,8 +137,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_COOKIE_SECURE = True  # If using HTTPS
 SESSION_COOKIE_SECURE = True  # If using HTTPS
-SECURE_SSL_REDIRECT = True  # If using HTTPS
-SECURE_BROWSER_XSS_FILTER = True  # XSS protection
-SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevents MIME-based attacks
-X_FRAME_OPTIONS = 'DENY'  # Clickjacking protection
-SECURE_HSTS_SECONDS = 31536000  # 1 year
