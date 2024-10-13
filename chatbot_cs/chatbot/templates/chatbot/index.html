@@ -5,7 +5,7 @@
     <!-- Other head elements -->    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot</title>
+    <title>Chatbot CS</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -128,7 +128,7 @@
             .then(data => {
                 const botMessageDiv = document.createElement('div');
                 botMessageDiv.classList.add('message', 'bot');
-                botMessageDiv.textContent = 'Bot: ' + data.response;
+                botMessageDiv.textContent = 'Customer Service: ' + data.response;
                 messagesDiv.appendChild(botMessageDiv);
 
                 // Scroll to the bottom of the chat
